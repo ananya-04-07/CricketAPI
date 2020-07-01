@@ -1,8 +1,11 @@
 package cricketapi.matchdetail;
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
 
+@Entity
 public class MatchDetail {
-    private String seriesId;
-    private int matchNumber;
+    @EmbeddedId
+    GroupId matchDetailId;
     private int team1Id;
     private int team2Id;
     private String tossWinn;
@@ -10,20 +13,12 @@ public class MatchDetail {
     private int team1Score;
     private int team2Score;
 
-    public String getSeriesId() {
-        return seriesId;
+    public GroupId getMatchDetailId() {
+        return matchDetailId;
     }
 
-    public void setSeriesId(String seriesId) {
-        this.seriesId = seriesId;
-    }
-
-    public int getMatchNumber() {
-        return matchNumber;
-    }
-
-    public void setMatchNumber(int matchNumber) {
-        this.matchNumber = matchNumber;
+    public void setMatchDetailId(GroupId matchDetailId) {
+        this.matchDetailId = matchDetailId;
     }
 
     public int getTeam1Id() {

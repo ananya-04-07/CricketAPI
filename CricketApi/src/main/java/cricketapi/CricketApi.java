@@ -8,5 +8,6 @@ public class CricketApi {
 
     public static void main(String[] args) {
         SpringApplication.run(CricketApi.class,args);
+
     }
 }
