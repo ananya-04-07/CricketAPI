@@ -1,31 +1,67 @@
-package cricketapi.Player;
+package cricketapi.player;
 
-public class Player {
-    private int teamId;
-    private String playerName;
-    private int jerseyNo;
+import cricketapi.Team.Team;
 
-    public int getTeamId() {
-        return teamId;
+import javax.persistence.*;
+import javax.persistence.Id;
+
+@Entity
+public class Player{
+    @Id
+    private int PlayerId;
+    private int teanmId;
+    private String player_name;
+    private String jersey_number;
+    private int run;
+    private int wicket;
+    @ManyToOne
+    private Team team;
+
+    public int getRun() {
+        return run;
     }
 
-    public void setTeamId(int teamId) {
-        this.teamId = teamId;
+    public void setRun(int run) {
+        this.run = run;
     }
 
-    public String getPlayerName() {
-        return playerName;
+    public int getWicket() {
+        return wicket;
     }
 
-    public void setPlayerName(String playerName) {
-        this.playerName = playerName;
+    public void setWicket(int wicket) {
+        this.wicket = wicket;
     }
 
-    public int getJerseyNo() {
-        return jerseyNo;
+    public int getPlayerId() {
+        return PlayerId;
     }
 
-    public void setJerseyNo(int jerseyNo) {
-        this.jerseyNo = jerseyNo;
+    public void setPlayerId(int playerId) {
+        this.PlayerId = playerId;
+    }
+
+    public int getTeanmId() {
+        return teanmId;
+    }
+
+    public void setTeanmId(int teanmId) {
+        this.teanmId = teanmId;
+    }
+
+    public String getPlayer_name() {
+        return player_name;
+    }
+
+    public void setPlayer_name(String player_name) {
+        this.player_name = player_name;
+    }
+
+    public String getJersey_number() {
+        return jersey_number;
+    }
+
+    public void setJersey_number(String jersey_number) {
+        this.jersey_number = jersey_number;
     }
 }

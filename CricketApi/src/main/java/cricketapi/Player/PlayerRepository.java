@@ -1,13 +1,12 @@
-package cricketapi.Player;
+package cricketapi.player;
 
-import cricketapi.Player.Player;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
-import java.sql.ResultSet;
 import java.util.List;
-
-public interface PlayerRepository  {
-    public void updatePlayer(int player1Id,Player player);
-    public ResultSet getPlayerList(int team1Id);
-    public void insertPlayerDetail(Player player);
+@Repository
+public interface PlayerRepository extends CrudRepository<Player,Integer> {
+    public List<Player> findByTeamId(int teamId);
+    public int countByTeamId(int teamId);
 
 }

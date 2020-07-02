@@ -1,7 +1,15 @@
 package cricketapi.matchdetail;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+@Entity
 public class MatchDetail {
-    private String seriesId;
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private int matchId;
+    private  String seriesId;
     private int matchNumber;
     private int team1Id;
     private int team2Id;
@@ -9,6 +17,14 @@ public class MatchDetail {
     private String batBallDecision;
     private int team1Score;
     private int team2Score;
+
+    public int getMatchId() {
+        return matchId;
+    }
+
+    public void setMatchId(int matchId) {
+        this.matchId = matchId;
+    }
 
     public String getSeriesId() {
         return seriesId;
